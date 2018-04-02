@@ -15,10 +15,12 @@ public class Coder {
                     String word = input[i];
                     for (int j = 0; j < word.length(); j++) {
                         char letter = word.charAt(j);
-                        resStr.append(morseAlp.get(Character.toString(letter).toLowerCase()));
-                        resStr.append(" ");
+                        if(morseAlp.get(Character.toString(letter).toLowerCase()) != null) {
+                            resStr.append(morseAlp.get(Character.toString(letter).toLowerCase()));
+                            resStr.append(" ");
+                        }
                     }
-                    resStr.append("       ");
+                    resStr.append("      ");
                 }
                 String tmpStr = resStr.toString();
                 resStr.setLength(0);
@@ -33,6 +35,7 @@ public class Coder {
             //...
         }
     }
+
     public static void main(String[] args) {
         Map<String, String> morseCodes = new HashMap<String, String>();
 

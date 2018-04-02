@@ -7,14 +7,12 @@ public class Decoder{
         StringBuilder word = new StringBuilder();
         try {
             String currStr;
-            char tmp;
             while ((currStr = reader.readLine()) != null){
                 String[] inStr = currStr.split("       ");
                 for (int i = 0; i < inStr.length; i++){
                     String[] currWord  = inStr[i].split(" ");
                     for (int j = 0; j < currWord.length; j++){
-                        String letter = currWord[j];
-                        word.append(alpM.get(letter));
+                        word.append(alpM.get(currWord[j]));
                     }
                     resStr = resStr.append(word).append(" ");
                     word.setLength(0);
